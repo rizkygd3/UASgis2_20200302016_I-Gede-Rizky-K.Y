@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <title>Program GoogleMaps</title>
+  <head>
+    <style>
+      #map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>UAS GIS II</h1>
+    <h4>Nama  :I Gede Rizky Kartika Yoga </h4>
+    <h4>NIM   :20200302016</h4>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var RumahSaya = {
+          lat: -0.8461023030127722, 
+          lng: 119.91083120453888,
+        };
+        var waypoint1 = { lat: -0.845192633187441,lng: 119.91077499510358};
+        var waypoint2 = { lat:-0.8451249767516047,lng: 119.91074792958547 };
+        var waypoint3 = { lat:-0.845050468438727,lng: 119.91062734763574 };
+        var waypoint4 = { lat: -0.8449552603756495,lng: 119.91059784333791 };
+        var waypoint5 = { lat: -0.8444550827556981,lng: 119.91057504456022 };
+        var waypoint6 = { lat: -0.8444403322086161,lng: 119.91074536482493};
+        var waypoint7 = { lat: -0.8435325029560937,lng: 119.91075743476817 };
+        var waypoint8 = { lat: -0.8435425205539769,lng: 119.90986156734971 };
+        var waypoint9 = { lat: -0.8434411503953059,lng: 119.90923638364114 };
+        var waypoint10 = { lat: -0.8435547930376399,lng: 119.90874769092618 };
+        var waypoint11 = { lat: -0.8435680224285822,lng: 119.90465927191943 };
+        var waypoint12 = { lat: -0.8434879115774749,lng: 119.90425581745802 };
+        var waypoint13 = { lat: -0.843497884799127,lng: 119.90305288100151};
+        var waypoint14 = { lat: -0.843568050638054,lng: 119.9024484324454};
+        var waypoint15 = { lat: -0.8434377635119992,lng: 119.89091861310487 };
+        var waypoint16 = { lat: -0.8463134180209118,lng: 119.8916827846865 };
+        var waypoint17 = { lat: -0.8475537854574478,lng: 119.89178202491756};
+        var waypoint18 = { lat: -0.848270943191292,lng: 119.89181811226129 };
+        var waypoint19 = { lat: -0.850805801492236,lng: 119.89213387665473};
+        var waypoint20 = { lat: -0.851175656142897,lng: 119.89212936573053 };
+        var waypoint21 = { lat: -0.8528670640498561,lng: 119.89201208181274};
+        var waypoint22 = { lat: -0.8554323116157239,lng: 119.89149822929402};
+        var waypoint23 = { lat: -0.8556371224609071,lng: 119.89234032328898};
+        var waypoint24 = { lat: -0.8561881474501976,lng: 119.89220689518017 };
+        var Polda = { lat: -0.8561794918684845,lng: 119.89234411650519 };
+
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: RumahSaya,
+        });
+        var marker1 = new google.maps.Marker({
+          position: RumahSaya,
+          map: map
+        });
+        var marker2 = new google.maps.Marker({ position: Polda, map: map });
+
+        var polyline = new google.maps.Polyline({
+          path: [
+            RumahSaya,
+            waypoint1,
+            waypoint2,
+            waypoint3,
+            waypoint4,
+            waypoint5,
+            waypoint6,
+            waypoint7,
+            waypoint8,
+            waypoint9,
+            waypoint10,
+            waypoint11,
+            waypoint12,
+            waypoint13,
+            waypoint14,
+            waypoint15,
+            waypoint16,
+            waypoint17,
+            waypoint18,
+            waypoint20,
+            waypoint21,
+            waypoint22,
+            waypoint23,
+            waypoint24,
+            Polda,
+          ],
+          strokeColor: "pink",
+          strokeOpacity: 5,
+          strokeWeight: 3.5,
+        });
+
+        polyline.setMap(map);
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh8nyTRtu21vDzdR0tfkST6kfDdWApSkU&callback=initMap"
+    ></script>
+  </body>
+</html>
